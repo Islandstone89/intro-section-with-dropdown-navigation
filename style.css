@@ -1,0 +1,246 @@
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+:is(ul, ol) {
+  list-style: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* Avoid orphans on paragraphs */
+p {
+    text-wrap: pretty;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  display: inline-block;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Epilogue';
+    src: url(assets/fonts/Epilogue-Medium.woff2) format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Epilogue';
+    src: url(assets/fonts/Epilogue-Bold.woff2) format("woff2");
+    font-weight: 700;
+}
+
+
+/*  CUSTOM PROPERTIES */
+
+:root {
+    /* COLORS */
+
+    --clr-almost-white: hsl(0, 0%, 98%); /* #FAFAFA */
+    --clr-medium-grey: hsl(0, 0%, 35%); /* #595959 */
+    --clr-almost-black: hsl(0, 0%, 8%); /* #151515 */
+
+    /* TYPOGRAPHY */
+
+    --ff-primary: 'Epilogue', sans-serif;
+    --fs-small: .875rem;
+    --fs-regular: 1.125rem;
+    --fs-large: 5rem;
+    
+    --fw-500: 500;
+    --fw-700: 700;
+
+    /* SPACING */
+
+    --spacing-100: 1rem;
+    --spacing-200: 1.5rem;
+    --spacing-300: 2rem;
+    --spacing-400: 2.5rem;
+    --spacing-500: 3rem;
+    --spacing-600: 6rem;
+    --spacing-700: 7rem;
+    --spacing-800: 7.5rem;
+    --spacing-900: 10rem;
+
+    --flow-spacer: var(--spacing-300);
+}
+
+/* UTILITIES */
+
+.flow {
+    --flow-space: var(--flow-spacer);
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1rem);
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-500);
+    font-size: var(--fs-regular);
+    background-color: var(--clr-almost-white);
+    color: var(--clr-medium-grey);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.secondary-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-400);
+}
+
+.register {
+    --outline-color: var(--clr-medium-grey);
+    outline: 1px solid var(--outline-color);
+    padding-block: var(--spacing-100);
+    padding-inline: var(--spacing-200);
+    border-radius: var(--spacing-100);
+    background-color: transparent;
+
+    &:is(:hover, :active) {
+        background-color: var(--clr-almost-white);
+        color: var(--clr-almost-black);
+        transition: .2s;
+        --outline-color: var(--clr-almost-black);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-300);
+
+    @media (width > 50rem) {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-700);
+    }
+}
+
+.grid__image {
+    @media (width > 50rem) {
+        grid-column: 2;
+    }
+}
+
+.grid__content {
+    text-align: center;
+
+    @media (width > 50rem) {
+        text-align: initial;
+    }
+}
+
+.main-heading {
+    color: var(--clr-almost-black);
+}
+
+.intro {
+    --flow-space: var(--spacing-100);
+
+    @media (width > 50rem) {
+        --flow-space: var(--spacing-500);
+    }
+}
+
+.cta-btn {
+    --flow-space: var(--spacing-200);
+    border-radius: var(--spacing-100);
+    background-color: var(--clr-almost-black);
+    color: var(--clr-almost-white);
+    outline: 1px solid var(--clr-almost-black);
+    padding-block: var(--spacing-200);
+    padding-inline: var(--spacing-300);
+    font-weight: var(--fw-700);
+
+    @media (width > 50rem) {
+        --flow-space: var(--spacing-500);
+    }
+
+    &:is(:hover, :active) {
+        background-color: var(--clr-almost-white);
+        color: var(--clr-almost-black);
+        transition: .2s;
+    }
+}
+
+.clients {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200 );
+
+    @media (width > 50rem) {
+        gap: var(--spacing-400);
+    }
+}
+

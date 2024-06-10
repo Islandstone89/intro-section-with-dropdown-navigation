@@ -2,38 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="header">
 
-  Features
-  Company
-  Careers
-  About
+    <img src="images/logo.svg" alt="Home">
+    <nav class="navigation">
+      <ul class="navigation__list primary-nav">
+        <li>Features</li>
+        <li>Company</li>
+        <li>Careers</li>
+        <li>About</li>
+      </ul>
 
-  Login
-  Register
+      <ul class="navigation__list secondary-nav">
+        <li><a href="#">Login</a></li>
+        <li><a href="#" class="register">Register</a></li>
+      </ul>
+    </nav><!-- end navigation -->
+  </header><!-- end header -->
 
-  Make remote work
+  <main class="main">
+    <div class="grid">
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+      <div class="grid__image">
+        <picture>
+          <source srcset="images/image-hero-desktop.png" media="(min-width: 50rem)">
+          <img src="images/image-hero-mobile.png" alt="">
+        </picture>
+      </div><!-- end grid__image -->
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="grid__content flow">
+        <h1 class="main-heading bold">Make remote work</h1>
+        <p class="intro">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        <a href="#" class="cta-btn">Learn more</a>
+
+        <div class="clients">
+          <img src="images/client-databiz.svg" alt="Databiz logo.">
+          <img src="images/client-audiophile.svg" alt="Audiophile logo.">
+          <img src="images/client-meet.svg" alt="Meet logo.">
+          <img src="images/client-maker.svg" alt="Maker logo.">
+        </div><!-- end clients -->
+      </div><!-- end grid__content -->
+
+    </div><!-- end grid -->
+  </main><!-- end main -->
 </body>
 </html>
