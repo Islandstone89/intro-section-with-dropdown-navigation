@@ -139,6 +139,7 @@ body {
     font-family: var(--ff-primary);
     font-weight: var(--fw-500);
     font-size: var(--fs-regular);
+    line-height: 1.5;
     background-color: var(--clr-almost-white);
     color: var(--clr-medium-grey);
 }
@@ -146,6 +147,7 @@ body {
 .header {
     display: flex;
     align-items: center;
+    line-height: 1;
 }
 
 .navigation {
@@ -158,6 +160,10 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-400);
+}
+
+.login:is(:hover, :focus) {
+    color: var(--clr-almost-black);
 }
 
 .register {
@@ -188,6 +194,8 @@ body {
 }
 
 .grid__image {
+    grid-column: 1;
+
     @media (width > 50rem) {
         grid-column: 2;
     }
@@ -195,6 +203,7 @@ body {
 
 .grid__content {
     text-align: center;
+    grid-column: 1;
 
     @media (width > 50rem) {
         text-align: initial;
@@ -203,6 +212,8 @@ body {
 
 .main-heading {
     color: var(--clr-almost-black);
+    font-size: var(--fs-large);
+    line-height: 1;
 }
 
 .intro {
