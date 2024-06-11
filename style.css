@@ -112,15 +112,15 @@ textarea:not([rows]) {
 
     /* SPACING */
 
-    --spacing-100: 1rem;
-    --spacing-200: 1.5rem;
-    --spacing-300: 2rem;
-    --spacing-400: 2.5rem;
-    --spacing-500: 3rem;
-    --spacing-600: 6rem;
-    --spacing-700: 7rem;
-    --spacing-800: 7.5rem;
-    --spacing-900: 10rem;
+    --spacing-100: 1rem; /* 16px */
+    --spacing-200: 1.5rem; /* 24px */
+    --spacing-300: 2rem; /* 32px */
+    --spacing-400: 2.5rem; /* 40px */
+    --spacing-500: 3rem; /* 48px */
+    --spacing-600: 6rem; /* 96px */
+    --spacing-700: 7rem; /* 112px */
+    --spacing-800: 7.5rem; /* 120px */
+    --spacing-900: 10rem; /* 160px */
 
     --flow-spacer: var(--spacing-300);
 }
@@ -145,9 +145,15 @@ body {
 }
 
 .header {
+    --padding-top: var(--spacing-100);
     display: flex;
     align-items: center;
     line-height: 1;
+    padding-block-start: var(--padding-top);
+
+    @media (width > 50rem) {
+        --padding-top: var(--spacing-200);
+    }
 }
 
 .navigation {
@@ -182,31 +188,48 @@ body {
     }
 }
 
+.main {
+    padding-block-start: var(--spacing-200);
+    padding-block-end: var(--spacing-600);
+
+    @media (width > 50rem) {
+        padding-block-start: 5rem;
+        padding-block-end: var(--spacing-800);
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-300);
+    gap: var(--spacing-500);
 
     @media (width > 50rem) {
         grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-700);
+        grid-template-rows: 1fr;
+        gap: var(--spacing-800);
     }
 }
 
 .grid__image {
     grid-column: 1;
+    grid-row: 1;
 
     @media (width > 50rem) {
         grid-column: 2;
+        grid-row: 1;
     }
 }
 
 .grid__content {
     text-align: center;
     grid-column: 1;
+    grid-row: 2;
 
     @media (width > 50rem) {
         text-align: initial;
+        grid-column: 1;
+        grid-row: 1;
+        padding-block-start: var(--spacing-800);
     }
 }
 
@@ -246,11 +269,13 @@ body {
 }
 
 .clients {
+    --flow-space: var(--spacing-500);
     display: flex;
     align-items: center;
     gap: var(--spacing-200 );
 
     @media (width > 50rem) {
+        --flow-space: var(--spacing-700);
         gap: var(--spacing-400);
     }
 }
