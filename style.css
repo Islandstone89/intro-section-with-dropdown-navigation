@@ -24,6 +24,8 @@ figure, blockquote, dl, dd {
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 :is(ul, ol) {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -99,6 +101,7 @@ textarea:not([rows]) {
     --clr-almost-white: hsl(0, 0%, 98%); /* #FAFAFA */
     --clr-medium-grey: hsl(0, 0%, 35%); /* #595959 */
     --clr-almost-black: hsl(0, 0%, 8%); /* #151515 */
+    --clr-white: hsl(0, 0%, 100%);
 
     /* TYPOGRAPHY */
 
@@ -140,6 +143,47 @@ textarea:not([rows]) {
     max-width: 100rem;
 }
 
+/* COMPONENTS */
+
+.navigation__item:is(:hover, :active) {
+    color: var(--clr-almost-black);
+}
+
+.navigation__button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.navigation__button {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+
+.navigation__submenu {
+    --flow-space: var(--spacing-100);
+    background-color: var(--clr-white);
+    
+    @media (width > 50rem) {
+        border-radius: 10px;
+        padding: var(--spacing-200);
+    }
+}
+
+.navigation__submenu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-100);
+}
+
+.navigation__submenu-link {
+    text-transform: capitalize;
+}
+
+
 /* GENERAL STYLING */
 
 body {
@@ -157,7 +201,9 @@ body {
 
     display: flex;
     align-items: center;
+    gap: 4rem;
     line-height: 1;
+    font-size: var(--fs-small);
     padding-block-start: var(--padding-top);
     padding-inline-start: var(--padding-inline);
     padding-inline-end: var(--padding-inline);
@@ -174,14 +220,16 @@ body {
     flex-grow: 1;
 }
 
-.secondary-nav {
+.primary-nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-400);
 }
 
-.login:is(:hover, :focus) {
-    color: var(--clr-almost-black);
+.secondary-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-400);
 }
 
 .register {
@@ -194,7 +242,6 @@ body {
 
     &:is(:hover, :active) {
         background-color: var(--clr-almost-white);
-        color: var(--clr-almost-black);
         transition: .2s;
         --outline-color: var(--clr-almost-black);
     }

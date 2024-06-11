@@ -14,16 +14,81 @@
     <img src="images/logo.svg" alt="Home">
     <nav class="navigation">
       <ul class="navigation__list primary-nav">
-        <li class="navigation__item">Features</li>
-        <li class="navigation__item">Company</li>
-        <li class="navigation__item">Careers</li>
-        <li class="navigation__item">About</li>
-      </ul>
+
+        <li class="navigation__item">
+          <div class="navigation__button-wrapper">
+            <a href="#" class="navigation__item-link">Features</a>
+            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false">
+              <svg aria-hidden="true" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+            </button>
+          </div><!-- end navigation__button-wrapper -->
+
+          <ul class="navigation__submenu js-navigation__submenu flow">
+
+            <li class="navigation__submenu-item">
+              <div class="navigation__submenu-wrapper">
+                <img src="images/icon-todo.svg" alt="">
+                <a href="#" class="navigation__submenu-link">To-do list</a>
+            </div><!-- end navigation__submenu-wrapper -->
+            
+          </li><!-- end navigation__submenu-item -->
+
+            <li class="navigation__submenu-item">
+              <div class="navigation__submenu-wrapper">
+                <img src="images/icon-calendar.svg" alt="">
+                <a href="#" class="navigation__submenu-link">Calendar</a>
+            </div><!-- end navigation__submenu-wrapper -->
+            
+          </li><!-- end navigation__submenu-item -->
+
+            <li class="navigation__submenu-item">
+              <div class="navigation__submenu-wrapper">
+                <img src="images/icon-reminders.svg" alt="">
+                <a href="#" class="navigation__submenu-link">Reminders</a>
+            </div><!-- end navigation__submenu-wrapper -->
+            
+          </li><!-- end navigation__submenu-item -->
+
+            <li class="navigation__submenu-item">
+              <div class="navigation__submenu-wrapper">
+                <img src="images/icon-planning.svg" alt="">
+                <a href="#" class="navigation__submenu-link">Planning</a>
+            </div><!-- end navigation__submenu-wrapper -->
+          </li><!-- end navigation__submenu-item -->
+
+          </ul><!-- end navigation__submenu -->
+
+        </li><!-- end navigation__item -->
+
+        <li class="navigation__item">
+          <div class="navigation__button-wrapper">
+            <a href="#" class="navigation__item-link">Company</a>
+            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false">
+              <svg aria-hidden="true" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+            </button>
+          </div><!-- end navigation__button-wrapper -->
+
+          <ul class="navigation__submenu js-navigation__submenu flow">
+            <li><a href="#" class="navigation__submenu-link">History</a></li>
+            <li><a href="#" class="navigation__submenu-link">Our team</a></li>
+            <li><a href="#" class="navigation__submenu-link">Blog</a></li>
+          </ul><!-- end navigation__submenu -->
+        </li><!-- end navigation__item -->
+
+        <li class="navigation__item">
+          <a href="#" class="navigation__item-link">Careers</a>
+        </li><!-- end navigation__item -->
+
+        <li class="navigation__item">
+          <a href="#" class="navigation__item-link">About</a>
+        </li><!-- end navigation__item -->
+
+      </ul><!-- end primary-nav -->
 
       <ul class="navigation__list secondary-nav">
-        <li><a href="#" class="login">Login</a></li>
-        <li><a href="#" class="register">Register</a></li>
-      </ul>
+        <li class="navigation__item"><a href="#" class="login">Login</a></li>
+        <li class="navigation__item"><a href="#" class="register">Register</a></li>
+      </ul><!-- end secondary-nav -->
     </nav><!-- end navigation -->
   </header><!-- end header -->
 
