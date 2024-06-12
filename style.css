@@ -161,6 +161,7 @@ textarea:not([rows]) {
     border: none;
     background-color: transparent;
     padding: 0;
+    cursor: pointer;
 }
 
 
@@ -172,6 +173,9 @@ textarea:not([rows]) {
         border-radius: 10px;
         padding: var(--spacing-200);
         margin-block-start: var(--spacing-100);
+        position: absolute;
+        top: 20px;
+        left: -4rem;
     }
 }
 
@@ -237,10 +241,29 @@ body {
     }
 }
 
+.navigation__item:has(.navigation__button[aria-expanded="false"]) {
+    .navigation__submenu {
+        display: none;
+    }
+}
+
+.navigation__item:has(.navigation__button[aria-expanded="true"]) {
+    .navigation__submenu {
+        display: block;
+    }
+    .navigation__button {
+        transform: scaleY(-1);
+    }
+}
+
+.has-submenu {
+    position: relative;
+}
+
 .primary-nav {
     display: flex;
     align-items: center;
-    gap: var(--spacing-400);
+    gap: 5rem;
 }
 
 .secondary-nav {

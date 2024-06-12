@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
@@ -15,10 +16,10 @@
     <nav class="navigation">
       <ul class="navigation__list primary-nav">
 
-        <li class="navigation__item">
+        <li class="navigation__item has-submenu">
           <div class="navigation__button-wrapper">
             <a href="#" class="navigation__item-link">Features</a>
-            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false">
+            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false" id="first-button">
               <svg aria-hidden="true" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
             </button>
           </div><!-- end navigation__button-wrapper -->
@@ -60,10 +61,10 @@
 
         </li><!-- end navigation__item -->
 
-        <li class="navigation__item">
+        <li class="navigation__item has-submenu">
           <div class="navigation__button-wrapper">
             <a href="#" class="navigation__item-link">Company</a>
-            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false">
+            <button aria-label="Expand submenu" class="navigation__button js-navigation__button" aria-expanded="false" id="second-button">
               <svg aria-hidden="true" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
             </button>
           </div><!-- end navigation__button-wrapper -->
