@@ -149,6 +149,7 @@ textarea:not([rows]) {
     color: var(--clr-almost-black);
 }
 
+
 .navigation__button-wrapper {
     display: flex;
     align-items: center;
@@ -170,6 +171,7 @@ textarea:not([rows]) {
     @media (width > 50rem) {
         border-radius: 10px;
         padding: var(--spacing-200);
+        margin-block-start: var(--spacing-100);
     }
 }
 
@@ -181,6 +183,17 @@ textarea:not([rows]) {
 
 .navigation__submenu-link {
     text-transform: capitalize;
+}
+
+.menu-toggle {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-inline-start: auto;
+
+    @media (width >50rem) {
+        display: none;
+    }
 }
 
 
@@ -215,9 +228,13 @@ body {
 }
 
 .navigation {
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-grow: 1;
+
+    @media (width > 50rem) {
+        display: flex;
+    }
 }
 
 .primary-nav {
