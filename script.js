@@ -5,8 +5,12 @@ let navigationButton1 = document.getElementById("first-button");
 /* Select second nav button */
 let navigationButton2 = document.getElementById("second-button");
 
-/* Select menu toggle button */
-let menuToggleOpenButton = document.querySelector(".js-menu-toggle");
+/* Select open menu button */
+let openMenuButton = document.querySelector(".js-open-menu");
+
+/* Select close menu button */
+let closeMenuButton = document.querySelector(".js-close-menu");
+
 
 
 /* Create function that toggles the first submenu */
@@ -35,3 +39,12 @@ function toggleSecondSubmenu () {
 
 /* Add Event Listener on second nav button */
 navigationButton2.addEventListener("click", toggleSecondSubmenu);
+
+
+/* Create function that opens mobile menu */
+function openMenu() {
+    openMenuButton.setAttribute("aria-expanded", "true");
+}
+
+/* Add Event Listener on open menu button */
+openMenuButton.addEventListener("click", openMenu);

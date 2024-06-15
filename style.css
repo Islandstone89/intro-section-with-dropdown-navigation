@@ -193,11 +193,25 @@ textarea:not([rows]) {
     }
 }
 
-.menu-toggle {
-    border: none;
+.open-menu {
+    border: transparent;
     background-color: transparent;
     cursor: pointer;
     margin-inline-start: auto;
+
+    @media (width >50rem) {
+        display: none;
+    }
+}
+
+
+.open-menu[aria-expanded="true"] {
+    background-color: red;
+}
+
+.close-menu {
+    border: transparent;
+    background-color: transparent;
 
     @media (width >50rem) {
         display: none;
@@ -290,6 +304,8 @@ body {
         --outline-color: var(--clr-almost-black);
     }
 }
+
+
 
 .main {
     padding-block-start: var(--spacing-200);
