@@ -158,7 +158,7 @@ textarea:not([rows]) {
 
 .navigation__button {
     display: flex;
-    border: none;
+    border: transparent;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
@@ -197,23 +197,34 @@ textarea:not([rows]) {
     border: transparent;
     background-color: transparent;
     cursor: pointer;
-    margin-inline-start: auto;
 
     @media (width >50rem) {
         display: none;
     }
 }
 
-
-.open-menu[aria-expanded="true"] {
-    background-color: red;
+.header:has(.open-menu[aria-expanded="false"]) {
+    .close-menu {
+        display: none;
+    }
 }
+
+.header:has(.open-menu[aria-expanded="true"]) {
+    .open-menu {
+        display: none;
+    }
+    .close-menu {
+        display: block;
+    }
+}
+
+
 
 .close-menu {
     border: transparent;
     background-color: transparent;
 
-    @media (width >50rem) {
+    @media (width > 50rem) {
         display: none;
     }
 }
@@ -236,6 +247,7 @@ body {
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 4rem;
     line-height: 1;
     font-size: var(--fs-small);
