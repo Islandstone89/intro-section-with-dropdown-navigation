@@ -145,7 +145,7 @@ textarea:not([rows]) {
 
 /* COMPONENTS */
 
-.navigation__item:is(:hover, :active) {
+.navigation__item-link:is(:hover, :active) {
     color: var(--clr-almost-black);
 }
 
@@ -187,6 +187,10 @@ textarea:not([rows]) {
 
 .navigation__submenu-link {
     text-transform: capitalize;
+
+    &:is(:hover) {
+        color: var(--clr-almost-black);
+    }
 }
 
 .menu-toggle {
