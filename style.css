@@ -231,8 +231,11 @@ textarea:not([rows]) {
         background-color: red;
         position: absolute;
         top: 0;
-        right: 0;
+        right: -50px;
         min-height: 100svh;
+        justify-content: flex-start;
+        box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.5);
+        z-index: 2;
     }
     .primary-nav {
         flex-direction: column;
@@ -299,6 +302,7 @@ body {
         --padding-inline: var(--spacing-400);
     }
 }
+
 
 .navigation {
     display: none;
